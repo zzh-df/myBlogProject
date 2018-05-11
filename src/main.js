@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// css初始化
+import './assets/style/base.css'
+import base from '@/assets/style/reset.scss'
+
 import store from '@/vuex'
 import Axios from 'axios'
 // 时间格式化

@@ -1,0 +1,85 @@
+@charset 'utf-8';
+@import './_variables.scss';
+@import './_mixin.scss';
+//reset style
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, 
+h3, h4, h5, h6, form, input, select, button, 
+textarea, table, th, tr, td{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+b,em,i{
+    font-weight: normal;
+    background:none;
+    font-style:normal;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+ul, ol, dl, li {
+    list-style-type: none;
+}
+
+input, select, button, textarea {
+    border: none;
+    outline: medium;
+    font-size:12px;
+    line-height: normal;
+}
+
+html{
+    height: 100%;
+}
+html>body{
+    height:100%;
+}
+body {
+    font-size:14px;
+    color:$color;
+    font-family: Tahoma, Geneva, Microsoft YaHei, "Source Han Sans CN Light", sans-serif;
+}
+
+.iconfont{
+    color:$color-sub;
+}
+
+//
+.prompt{
+    width: 0.18rem;
+    height: 0.18rem;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    line-height: 0.18rem;
+    @include border-radius(50%);
+}
+//other-common
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.hide{
+    display: none;
+}
+.disabel{pointer-events: none;}
+
+//font-size
+.fw{font-weight: bold;}
+
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f17{font-size:17px;}
+.f18{font-size:18px;}
+.f20{font-size:20px;}
+.f22{font-size:22px;}
+.f24{font-size:24px;}
+.f26{font-size:26px;}

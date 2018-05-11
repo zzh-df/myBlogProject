@@ -1,0 +1,17 @@
+.ivu-input{
+    border-radius: 0;
+    height:26px;
+    border:none;
+    &:hover{
+        outline: none;
+        border-color:#dddee1;
+    }
+    &:focus{
+        outline: none;
+        border-color:#dddee1;
+        box-shadow: none;
+    }
+}
+.ivu-input-icon{
+    line-height:27px;
+}

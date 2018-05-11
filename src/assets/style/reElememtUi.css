@@ -1,0 +1,16 @@
+.el-date-editor.el-input{
+  width:158px !important;
+}
+.timeC .el-date-editor.el-input{
+  width:148px !important;
+}
+.el-date-editor.el-input .el-input__inner{
+  border:none;
+  height:28px;
+}
+.el-date-editor.el-input .el-input__icon{
+  line-height: 28px;
+}
+.el-picker-panel.el-date-picker{
+  line-height: normal;
+}

@@ -1,0 +1,52 @@
+/* 公用样式 start*/
+html,body, div, p, ul, ol,li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th,tr,td {margin:0;padding: 0;}
+img{border:none;vertical-align: middle;}
+ul li,dl{ list-style-type: none; }
+label{cursor: pointer}
+strong,b{font-weight: normal;}
+input, select, button, textarea{
+    border:none;
+    outline:medium; 
+    /*-webkit-appearance:none;*/
+    }
+
+div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input{
+    box-sizing: border-box;
+}
+body {
+    font-size: 14px;
+    font-family: Tahoma, Geneva, Regular,Microsoft YaHei,sans-serif;
+}
+.clearfix:after{content:'';display: block; clear: both;height:0;visibility: hidden;}
+.fl{float:left}
+.fr{float:right}
+
+a{
+    text-decoration: none;
+    color:#000;
+}
+
+/*font-size*/
+
+/*font colors*/
+.f-white{color:#fff;}
+.f-black{color:#000;}
+.f-37384a{color:#37384a;}
+.f-666{color:#666;}
+.f-3b37f3{color:#3b37f3;}
+.f-red{color:red;}
+
+/*backgrond-color*/
+.bg-transparent{background-color:transparent;}
+.bg-white{background-color:#fff;}
+.bg-black{background-color:#000;}
+
+/*切换路由的动画*/
+.fade-enter-active,
+.fade-leave-active {
+transition: all .2s ease;
+}
+.fade-enter,
+.fade-leave-active {
+opacity: 0;
+}

@@ -1,0 +1,60 @@
+@charset 'utf-8';
+
+//占位符
+%clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+
+//==base colors
+$base-dark:#000 !default;
+
+$base-blue:#0096fa !default;
+
+$base-light:#fff !default;
+
+
+//color--------------------------------------
+$color-light:$base-light !default;
+$color-gray:lighten($base-dark,60%) !default; //#999
+$color-blue:$base-blue !default;
+  
+$color:#333 !default;  //默认字体
+$color-sub:#999 !default; //副字体
+$color-active:#0196fc !default; //活动状态
+$color-hover:#0196fc !default; //鼠标滑过
+
+//bg-------------------------------------------------
+// $bg-light:$base-light !default;
+$bg-light-gray:lighten($base-dark,80%) !default;
+$bg-gray:lighten($base-dark,60%) !default;
+$bg-dark:$base-dark !default;
+$bg-blue:$base-blue !default;
+
+$bg:#fff !default;  //默认背景
+$bg-light:#f5f5f5 !default; //浅色背景
+$bg-sub:#eaeaea !default;  //副背景
+$bg-active:#dfdfdf !default;  //活动状态
+$bg-hover:#eee !default;   //鼠标滑过
+
+//==link
+
+
+//==font-size
+
+
+
+//==边框，分割线颜色
+$border-color:#dcdcdc !default;
+
+
+
+
+// 最新主题
+$bg-color:#25476A;

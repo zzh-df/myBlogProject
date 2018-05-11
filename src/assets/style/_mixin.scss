@@ -1,0 +1,34 @@
+//border-radius
+@mixin border-radius($radius:3px){
+    -moz-border-radius:$radius;
+    -webkit-border-radius:$radius;
+    border-radius:$radius;
+}
+
+//box-shadow
+@mixin box-shadow($shadow...){
+    -moz-box-shadow:$shadow;
+    -webkit-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+
+//-webkit-scrollbar
+@mixin scrollbar(){
+    &::-webkit-scrollbar{
+        width: 0.2rem;
+        height: 0.1rem;
+        background-color:transparent;
+    }
+    &::-webkit-scrollbar-track{
+        // -webkit-box-shadow: inset 0 0 6px red;
+        border-radius: 10px;
+        // background-color: darken(#fff,10%);
+    }
+    &::-webkit-scrollbar-thumb{
+        /*width: 10px;*/
+        height: 20px;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+        background-color:darken(#fff,20%);
+    }
+}
