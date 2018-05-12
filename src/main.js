@@ -7,6 +7,9 @@ import router from './router'
 import './assets/style/base.css'
 import base from '@/assets/style/reset.scss'
 
+// 引入字体图标
+import './assets/iconfont/iconfont.css'
+
 import store from '@/vuex'
 import Axios from 'axios'
 // 时间格式化

@@ -35,12 +35,12 @@
     @import '../assets/style/base.scss';
     .main{
         width:100%;
-        height:100%;    
+        min-height:100%;    
         display:flex;
         background:$bg-color;
         .left{
             width:240px;
-            background:#000;
+            padding:20px 10px 0 0;
             overflow-y:auto;
             @include scrollbar;
         }
