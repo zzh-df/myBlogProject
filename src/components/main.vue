@@ -4,12 +4,13 @@
             <leftMenu></leftMenu>
         </div>
         <div class="right">
-
+            <home></home>
         </div>
     </div>
 </template>
 <script>
     import leftMenu from '@/components/common/leftMenu'
+    import home from '@/components/home/home'
     export default {
         name:'mainPage',
         data(){
@@ -21,7 +22,8 @@
 
         },
         components:{
-            leftMenu
+            leftMenu,
+            home
         },
         methods:{
 
@@ -39,8 +41,7 @@
         display:flex;
         background:$bg-color;
         .left{
-            width:240px;
-            padding:20px 10px 0 0;
+            width:2.4rem;
             overflow-y:auto;
             @include scrollbar;
         }

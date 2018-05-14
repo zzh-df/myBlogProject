@@ -15,11 +15,11 @@
                         <div :class="['name',{active:curtab==index&&item.show}]" @click="switchShow(item,index)">
                             <i class="iconfont icon-weibiaoti1"></i>
                             {{item.mainLabel}}
-                            <i :class="['iconfont','icon-right',{trans:item.show}]"></i>
+                            <i :class="['iconfont','icon-right',{trans:item.show}]" v-if="item.children.length>0"></i>
                         </div>
                         <!-- <ul :class="['secondkey',{hidekey:!item.show}]"> -->
                         <ul :class="['secondkey']" v-if="item.show">
-                            <li v-for="(child,index2) in item.children" @click="cursecoond=index2" :class="{active2:curtab==index&&cursecond==index2}">
+                            <li v-for="(child,index2) in item.children" @click="cursecond=index2" :class="{active2:curtab==index&&cursecond==index2}">
                                 <!-- <i class="iconfont icon-weibiaoti1"></i> -->
                                 {{child.secendLabel}}
                             </li>
@@ -38,19 +38,9 @@
                 username:'',
                 tabList:[
                     {
-                        mainLabel:'主目录',
+                        mainLabel:'首页',
                         show:true,
-                        children:[
-                            {
-                                secendLabel:'子目录'
-                            },
-                            {
-                                secendLabel:'子目录'
-                            },
-                            {
-                                secendLabel:'子目录'
-                            }
-                        ]
+                        children:[]
                     },
                     {
                         mainLabel:'主目录',
@@ -114,7 +104,7 @@
                     },
                 ],
                 curtab:0,         //当前选中的主菜单
-                cursecond:0,      //当前选中的二级菜单
+                cursecond:-1,      //当前选中的二级菜单
                 
             }
         },
@@ -126,6 +116,11 @@
         },
         methods:{
             switchShow(item,index){
+                if(item.children.length<=0){
+                    this.curtab=index;
+                    item.show=true;
+                    return
+                }
                 if(this.curtab==index){
                     item.show=!item.show;
                 }else{
@@ -145,21 +140,20 @@
         width:100%;
         min-height:100%;    
         // padding:20px 10px 0 0;
-        background:#fff;
+        background:#121920;
         .wrapper{
-            padding-top:60px;
             height:100%;
             overflow-y: auto;
             @include scrollbar;
-            padding:60px 10px 0;
+            padding:0.6rem 0.1rem 0;
         }
         .userInfo{
             width:100%;
-            margin-bottom:30px;
+            margin-bottom:0.3rem;
             .userimg{
                 position: relative;
-                width:100px;
-                height:100px;
+                width:1rem;
+                height:1rem;
                 border-radius:50%;
                 margin:0 auto 0;
                 overflow: hidden;
@@ -173,9 +167,10 @@
                 }
             }
             .user{
-                margin: 20px 0;
+                margin: 0.2rem 0;
                 text-align: center;
-                font-size:16px;
+                font-size:0.16rem;
+                color:#fff;
             }
         }
         .nav{
@@ -185,27 +180,28 @@
                     width:100%;
                     cursor: pointer;
                     user-select:none;
+                    color:#fff;
                     i{
-                        margin-right:5px;
+                        color:#fff;
                         &.icon-right{
                             float:right;
                         }
                     }
                     .name{
-                        padding:10px 20px 10px 40px;
+                        padding:0.1rem 0.1rem 0.1rem 0.4rem;
                         border-radius:5px;
                         &.active{
-                            color:#fff;
+                            color:#2BC1BF;
                             background:rgb(37, 71, 106);
-                            i{color:#fff;}
+                            i{color:#2BC1BF;}
                             &:hover{
                                 background: rgba(37, 71, 106,1);
                             }
                         }
                         &:hover{
                             background: rgba(37, 71, 106,0.7);
-                            color:#fff;
-                            i{color:#fff;}
+                            color:#2BC1BF;
+                            i{color:#2BC1BF;}
                         }
                     }
                     .trans{
@@ -215,7 +211,7 @@
                     .secondkey{
                         width:100%;
                         overflow: hidden;
-                        max-height:1000px;
+                        max-height:10rem;
                         transition:max-height ease-in 1s;
                         -moz-transition:max-height ease-in 1s; /* Firefox 4 */
                         -webkit-transition:max-height ease-in 1s; /* Safari and Chrome */
@@ -225,22 +221,22 @@
                         }
                         li{
                             width:100%;
-                            padding:10px 20px 10px 70px;
+                            padding:0.1rem 0.2rem 0.1rem 0.7rem;
                             cursor: pointer;
                             border-radius:5px;
                             &.active2{
-                                color:rgba(37, 71, 106,1);
+                                color:#2BC1BF;
                                 font-weight:900;
                             }
                             &:hover{
-                                color:rgba(37, 71, 106,1);
+                                color:#2BC1BF;
                                 font-weight: 900;
                             }
                             &:first-child{
-                                padding-top:10px;
+                                padding-top:0.1rem;
                             }
                             &:last-child{
-                                padding-bottom:20px;
+                                padding-bottom:0.2rem;
                             }
                         }
                     }
