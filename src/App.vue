@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <home></home>
   </div>
 </template>
 
 <script>
+import home from '@/components/main'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    home
+  }
 }
 </script>
 

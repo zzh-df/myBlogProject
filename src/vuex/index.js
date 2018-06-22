@@ -10,7 +10,7 @@ import getters from '@/vuex/getters'
 
 
 // 引入组件状态
-
+import canvas from './modules/canvas.js'
 
 
 
@@ -21,6 +21,6 @@ export default new Vuex.Store({
     mutations,
     actions,
     modules:{
-        
+        canvas
     }
 })

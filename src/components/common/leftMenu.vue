@@ -14,15 +14,23 @@
                     <li v-for="(item,index) in tabList">
                         <div :class="['name',{active:curtab==index&&item.show}]" @click="switchShow(item,index)">
                             <i class="iconfont icon-weibiaoti1"></i>
-                            {{item.mainLabel}}
+                            <span v-if="item.children.length>0" class="commonName">{{item.mainLabel}}</span>
+                            <router-link :to="item.link" tag="span" class="commonName" v-else>{{item.mainLabel}}</router-link>
                             <i :class="['iconfont','icon-right',{trans:item.show}]" v-if="item.children.length>0"></i>
                         </div>
                         <!-- <ul :class="['secondkey',{hidekey:!item.show}]"> -->
                         <ul :class="['secondkey']" v-if="item.show">
-                            <li v-for="(child,index2) in item.children" @click="cursecond=index2" :class="{active2:curtab==index&&cursecond==index2}">
+                            <!-- <li v-for="(child,index2) in item.children" @click="cursecond=index2" :class="{active2:curtab==index&&cursecond==index2}"> -->
                                 <!-- <i class="iconfont icon-weibiaoti1"></i> -->
-                                {{child.secendLabel}}
-                            </li>
+                                <router-link 
+                                :to="child.link" 
+                                tag='li' 
+                                v-for="(child,index2) in item.children" 
+                                :key="index2"
+                                @click.native="switchSecond(item,index,index2)" 
+                                :class="{active2:curtab==index&&cursecond==index2}"
+                                >{{child.secendLabel}}</router-link>
+                            <!-- </li> -->
                         </ul>
                     </li>
                 </ul>
@@ -40,20 +48,24 @@
                     {
                         mainLabel:'首页',
                         show:true,
+                        link:'/',
                         children:[]
                     },
                     {
-                        mainLabel:'主目录',
+                        mainLabel:'canvas特效',
                         show:false,
                         children:[
                             {
-                                secendLabel:'子目录'
+                                secendLabel:'雪花特效',
+                                link:'/snow'
                             },
                             {
-                                secendLabel:'子目录'
+                                secendLabel:'数字矩阵',
+                                link:'/matrix'
                             },
                             {
-                                secendLabel:'子目录'
+                                secendLabel:'粒子连线',
+                                link:'/particalLine'
                             }
                         ]
                     },
@@ -62,13 +74,12 @@
                         show:false,
                         children:[
                             {
-                                secendLabel:'子目录'
+                                secendLabel:'子目录',
+                                link:''
                             },
                             {
-                                secendLabel:'子目录'
-                            },
-                            {
-                                secendLabel:'子目录'
+                                secendLabel:'子目录',
+                                link:''
                             }
                         ]
                     },
@@ -77,13 +88,12 @@
                         show:false,
                         children:[
                             {
-                                secendLabel:'子目录'
+                                secendLabel:'子目录',
+                                link:''
                             },
                             {
-                                secendLabel:'子目录'
-                            },
-                            {
-                                secendLabel:'子目录'
+                                secendLabel:'子目录',
+                                link:''
                             }
                         ]
                     },
@@ -92,13 +102,12 @@
                         show:false,
                         children:[
                             {
-                                secendLabel:'子目录'
+                                secendLabel:'子目录',
+                                link:''
                             },
                             {
-                                secendLabel:'子目录'
-                            },
-                            {
-                                secendLabel:'子目录'
+                                secendLabel:'子目录',
+                                link:''
                             }
                         ]
                     },
@@ -127,6 +136,10 @@
                     this.curtab=index;
                     item.show=!item.show;
                 }
+            },
+            switchSecond(item,index,index2){
+                this.curtab=index;
+                this.cursecond=index2;
             }
         },
         mounted(){
@@ -155,7 +168,7 @@
                 width:1rem;
                 height:1rem;
                 border-radius:50%;
-                margin:0 auto 0;
+                margin:0 auto;
                 overflow: hidden;
                 img{
                     position: absolute;
@@ -190,6 +203,13 @@
                     .name{
                         padding:0.1rem 0.1rem 0.1rem 0.4rem;
                         border-radius:5px;
+                        display:flex;
+                        i{width:0.16rem;}
+                        .commonName{
+                            display:inline-block;
+                            flex:1;
+                            padding:0 0.05rem;
+                        }
                         &.active{
                             color:#2BC1BF;
                             background:rgb(37, 71, 106);

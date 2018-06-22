@@ -4,7 +4,7 @@
             <leftMenu></leftMenu>
         </div>
         <div class="right">
-            <home></home>
+            <router-view></router-view>
         </div>
     </div>
 </template>
@@ -47,6 +47,9 @@
         }
         .right{
             flex:1;
+            min-height:100%;
+            // overflow-y:auto;
+            // @include scrollbar;
             // background:#999;
         }
     }
