@@ -70,7 +70,7 @@ export default {
         canvas.onmousemove = function(e) {  
             var ev = event || e;  
             mouseX = ev.offsetX;  
-            mouseY = ev.offsetY;  
+            mouseY = ev.offsetY;
 
             particle[0].color='transparent';
             particle[0].x=mouseX;
@@ -109,7 +109,7 @@ export default {
         // 让canvas铺满整个屏幕
         function getSize(){
             w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight-document.documentElement.clientHeight/3;
+            h = canvas.height = window.innerHeight;
         }
         // 粒子的类
         function Partical(){
@@ -186,11 +186,10 @@ export default {
     background-position:center;
     background-repeat: no-repeat;
     background-size:cover;
-    zoom: 0.5;
     overflow: hidden;
     .canvas {
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
     }
 }
 </style>

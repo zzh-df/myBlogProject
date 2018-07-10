@@ -36,17 +36,25 @@
 <style lang="scss" scoped>
     @import '../assets/style/base.scss';
     .main{
+        position: relative;
         width:100%;
         min-height:100%;    
         display:flex;
         background:$bg-color;
+        padding-left:2.4rem;
         .left{
+            position:absolute;
+            top:0;
+            left:0;
             width:2.4rem;
+            min-height:100%; 
+            background:#121920;
             overflow-y:auto;
             @include scrollbar;
         }
         .right{
-            flex:1;
+            // flex:1;
+            width:100%;
             min-height:100%;
             // overflow-y:auto;
             // @include scrollbar;
