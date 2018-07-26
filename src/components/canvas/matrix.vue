@@ -83,10 +83,6 @@ export default {
   .matrix{
     width:100%;
     height:100%;
-    background-image: url('../../assets/image/snowBg.jpg');
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size:100%;
     zoom:0.5;
     overflow: hidden;
     .canvas{

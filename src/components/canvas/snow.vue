@@ -116,7 +116,7 @@ export default {
     this.height = this.canvas.clientHeight;
     // 小屏幕时延长添加雪花时间，避免屏幕上出现太多的雪花
     if (this.wid < 768) {
-    this.snowNum = 350;
+        this.snowNum = 350;
     }
 
     // this.snowImage = new Image();
@@ -131,16 +131,16 @@ export default {
   .snow{
     width:100%;
     height:100%;
-    background-image: url('../../assets/image/snowBg.jpg');
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size:100%;
+    // background-image: url('../../assets/image/snowBg.jpg');
+    // background-position:center;
+    // background-repeat: no-repeat;
+    // background-size:100%;
+    background: #000;
     zoom:0.4;
     overflow: hidden;
     .canvas{
       width:100%;
       height:100%;
-    //   transform:scale(2,2)
     }
   }
 </style>

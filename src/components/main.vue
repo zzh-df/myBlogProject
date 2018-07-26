@@ -42,6 +42,7 @@
         display:flex;
         background:$bg-color;
         padding-left:2.4rem;
+        overflow: hidden;
         .left{
             position:absolute;
             top:0;
@@ -53,12 +54,8 @@
             @include scrollbar;
         }
         .right{
-            // flex:1;
             width:100%;
             min-height:100%;
-            // overflow-y:auto;
-            // @include scrollbar;
-            // background:#999;
         }
     }
 </style>
