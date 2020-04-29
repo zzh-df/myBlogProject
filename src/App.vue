@@ -10,7 +10,7 @@ export default {
   name: 'App',
   data(){
     return {
-      msg:'test'
+      msg:'master'
     }
   },
   components:{
