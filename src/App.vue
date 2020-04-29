@@ -8,6 +8,11 @@
 import home from '@/components/main'
 export default {
   name: 'App',
+  data(){
+    return {
+      msg:'test'
+    }
+  },
   components:{
     home
   }
